@@ -6,6 +6,7 @@ import App from './components/App'
 
 ReactDOM.render(
   <AppStore>
+  <lable>Dinu The Best</label>
     <App />
   </AppStore>,
   document.getElementById('root')
