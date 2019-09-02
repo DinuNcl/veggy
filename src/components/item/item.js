@@ -61,6 +61,7 @@ const setNewValue = ({ target: value }) => {
 
   return(
     <div className={classes.item}>
+    <div>TEST TEST</div>
       <Link component={RouterLink} to={`/product/${product.id}`}>
         <img
           src={product.image}
