@@ -1,9 +1,17 @@
-import React,  { Fragment } from 'react'
+import React from "react";
 
-const Footer = ({ classes }) => (
-    <Fragment>
-          "FOOTER"
-    </Fragment>
-)
+const style = {
+  backgroundColor: "black",
+  height: 100
+}
+
+const Footer = () => {
+    return(
+      <div
+        style={style}
+      >
+      </div>
+    )
+}
 
 export default Footer

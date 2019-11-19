@@ -1,12 +1,26 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
+import { combineReducers, createStore } from 'redux';
+import {category, currency, isLoading} from "./components/layout/reducers"
+import {Provider} from "react-redux";
+import {productList} from "./components/productList/reducers";
 
-import AppStore from "./components/AppStore";
-import App from './components/App'
+export let store = createStore(combineReducers({
+  category,
+  currency,
+  productList,
+  isLoading
+}))
 
 ReactDOM.render(
-  <AppStore>
-    <App />
-  </AppStore>,
-  document.getElementById('root')
-);
+  <Provider store={store}>
+      <App/>
+  </Provider>,
+  document.getElementById('root'));
+
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();
